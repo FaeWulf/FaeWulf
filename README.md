@@ -14,7 +14,7 @@
     <a href="https://faewulf.xyz" target="_blank">Website</a>
 </p>
 
-![](http://api.faewulf.xyz/api/bonsai?live=true&width=500&height=500)
+![](http://api.faewulf.xyz/api/bonsai?live=false&width=500&height=500)
 
 <p align="center">
   <img src="http://api.faewulf.xyz/api/bonsai?live=true&width=500&height=500&seed=fwlf width="350" height="350">
