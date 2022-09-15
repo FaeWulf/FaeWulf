@@ -15,6 +15,6 @@
 </p>
 
 <p align="center">
-  <img src="http://api.faewulf.xyz/api/bonsai?live=true&width=500&height=500&seed="faewulf" width="350" height="350">
+  <img src="http://api.faewulf.xyz/api/bonsai?live=true&width=500&height=500&seed=fwlf width="350" height="350">
   <img src="http://api.faewulf.xyz/api/github" height="350">
 </p>
