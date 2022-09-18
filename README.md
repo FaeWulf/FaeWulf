@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm FaeWulf</h1>
-<h5 align="center">A "tryhard" developer :). Trying to learn everything if possible... “Jack of ALL but master of at least ONE“</h5>
+<h3 align="center">A "tryhard" developer :). Trying to learn everything if possible... “Jack of ALL but master of at least ONE“</h5>
 
 <p align="center">
   <img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat-square&logo=c&logoColor=white">
