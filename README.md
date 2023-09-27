@@ -16,8 +16,8 @@
 
 
 <p align="center">
-  <img src="https://faewulf.xyz/api/bonsai?live=true&width=500&height=500" width="340" height="340"/> 
-  <img src="https://faewulf.xyz/api/github" height="340"/>
-  <img align="left" src="https://faewulf.xyz/api/daily"/>
+  <img src="https://faewulf.xyz/api/v1/misc/bonsai?time=40&width=500&height=500" width="340" height="340"/> 
+  <img src="https://faewulf.xyz/api/v1/misc/github/stats" height="340"/>
+  <img align="left" src="https://faewulf.xyz/api/v1/misc/github/daily"/>
 </p>
 
