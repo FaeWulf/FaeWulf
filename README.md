@@ -1,5 +1,6 @@
 <h1 align="center">Hi 👋, I'm FaeWulf</h1>
-<h3 align="center">A "tryhard" developer :). Trying to learn everything if possible... “Jack of ALL but master of at least ONE“</h5>
+<h3 align="center">An eager developer striving to excel in a broad range of skills</h5>
+<h3 align="center">Aspiring to become a "Jack of all trades" while honing expertise in at least one</h5>
 
 <p align="center">
   <img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat-square&logo=c&logoColor=white">
