@@ -12,7 +12,7 @@
 
 <p align="center">
     <a href="mailto:ngolamaz3@gmail.com" target="_blank">Email</a> | 
-    <a href="https://faewulf.xyz" target="_blank">Website</a>
+    <a href="https://faewulf.xyz" target="_blank">Website ← should take a look!</a>
 </p>
 
 
