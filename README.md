@@ -11,6 +11,7 @@
 </p>
 
 <p align="center">
+    <a href="https://discord.gg/xZneCTcEvb" target="_blank">Discord server</a> |
     <a href="mailto:ngolamaz3@gmail.com" target="_blank">Email</a> | 
     <a href="https://faewulf.xyz" target="_blank">Website ← should take a look!</a>
 </p>
