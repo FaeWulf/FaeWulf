@@ -1,3 +1,7 @@
+Create: "2023-02-12T07:00:00.000Z"
+Edit: "2024-2-11T07:00:00.000Z"
+Tags: "no one like you"
+
 # This article is for testing purpose...
 
 # markdown-it <!-- omit in toc -->
@@ -10,24 +14,26 @@
 > Markdown parser done right. Fast and easy to extend.
 __[Live demo](https://markdown-it.github.io)__
 
-- Follows the __[CommonMark spec](http://spec.commonmark.org/)__ + adds syntax extensions & sugar (URL autolinking, typographer).
+- Follows the __[CommonMark spec](http://spec.commonmark.org/)__ + adds syntax extensions & sugar (URL autolinking,
+  typographer).
 - Configurable syntax! You can add new rules and even replace existing ones.
 - High speed.
 - [Safe](https://github.com/markdown-it/markdown-it/tree/master/docs/security.md) by default.
-- Community-written __[plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin)__ and [other packages](https://www.npmjs.org/browse/keyword/markdown-it) on npm.
+- Community-written __[plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin)__
+  and [other packages](https://www.npmjs.org/browse/keyword/markdown-it) on npm.
 
 __Table of content__
 
 - [Install](#install)
 - [Usage examples](#usage-examples)
-  - [Simple](#simple)
-  - [Init with presets and options](#init-with-presets-and-options)
-  - [Plugins load](#plugins-load)
-  - [Syntax highlighting](#syntax-highlighting)
-  - [Linkify](#linkify)
+    - [Simple](#simple)
+    - [Init with presets and options](#init-with-presets-and-options)
+    - [Plugins load](#plugins-load)
+    - [Syntax highlighting](#syntax-highlighting)
+    - [Linkify](#linkify)
 - [API](#api)
 - [Syntax extensions](#syntax-extensions)
-  - [Manage rules](#manage-rules)
+    - [Manage rules](#manage-rules)
 - [Benchmark](#benchmark)
 - [markdown-it for enterprise](#markdown-it-for-enterprise)
 - [Authors](#authors)
@@ -36,7 +42,7 @@ __Table of content__
 ## Install
 
 | Version | Supported          |
-| ------- | ------------------ |
+|---------|--------------------|
 | 5.x     | :white_check_mark: |
 | 4.x     | :white_check_mark: |
 | < 4.0   | :x:                |
@@ -44,7 +50,6 @@ __Table of content__
 ::: warning
 *here be dragons*
 :::
-
 
 **node.js**:
 
@@ -57,7 +62,6 @@ npm install markdown-it --save
 - [jsDeliver CDN](http://www.jsdelivr.com/#!markdown-it "jsDelivr CDN")
 - [cdnjs.com CDN](https://cdnjs.com/libraries/markdown-it "cdnjs.com")
 
-
 ## Usage examples
 
 See also:
@@ -67,13 +71,12 @@ See also:
 - [Development info](https://github.com/markdown-it/markdown-it/tree/master/docs) -
   for plugins writers.
 
-
 ### Simple
 
 ```js
 // node.js, "classic" way:
 var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
+	md = new MarkdownIt();
 var result = md.render('# markdown-it rulezz!');
 // node.js, the same, but with sugar:
 var md = require('markdown-it')();
@@ -91,7 +94,6 @@ var md = require('markdown-it')();
 var result = md.renderInline('__markdown-it__ rulezz!');
 ```
 
-
 ### Init with presets and options
 
 (*) presets define combinations of active rules and options. Can be
@@ -105,32 +107,34 @@ var md = require('markdown-it')('commonmark');
 var md = require('markdown-it')();
 // enable everything
 var md = require('markdown-it')({
-  html: true,
-  linkify: true,
-  typographer: true
+	html: true,
+	linkify: true,
+	typographer: true
 });
 // full options list (defaults)
 var md = require('markdown-it')({
-  html:         false,        // Enable HTML tags in source
-  xhtmlOut:     false,        // Use '/' to close single tags (<br />).
-                              // This is only for full CommonMark compatibility.
-  breaks:       false,        // Convert '\n' in paragraphs into <br>
-  langPrefix:   'language-',  // CSS language prefix for fenced blocks. Can be
-                              // useful for external highlighters.
-  linkify:      false,        // Autoconvert URL-like text to links
-  // Enable some language-neutral replacement + quotes beautification
-  // For the full list of replacements, see https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js
-  typographer:  false,
-  // Double + single quotes replacement pairs, when typographer enabled,
-  // and smartquotes on. Could be either a String or an Array.
-  //
-  // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-  // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-  quotes: '“”‘’',
-  // Highlighter function. Should return escaped HTML,
-  // or '' if the source string is not changed and should be escaped externally.
-  // If result starts with <pre... internal wrapper is skipped.
-  highlight: function (/*str, lang*/) { return ''; }
+	html: false,        // Enable HTML tags in source
+	xhtmlOut: false,        // Use '/' to close single tags (<br />).
+													// This is only for full CommonMark compatibility.
+	breaks: false,        // Convert '\n' in paragraphs into <br>
+	langPrefix: 'language-',  // CSS language prefix for fenced blocks. Can be
+														// useful for external highlighters.
+	linkify: false,        // Autoconvert URL-like text to links
+	// Enable some language-neutral replacement + quotes beautification
+	// For the full list of replacements, see https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js
+	typographer: false,
+	// Double + single quotes replacement pairs, when typographer enabled,
+	// and smartquotes on. Could be either a String or an Array.
+	//
+	// For example, you can use '«»„“' for Russian, '„“‚‘' for German,
+	// and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
+	quotes: '“”‘’',
+	// Highlighter function. Should return escaped HTML,
+	// or '' if the source string is not changed and should be escaped externally.
+	// If result starts with <pre... internal wrapper is skipped.
+	highlight: function(/*str, lang*/) {
+		return '';
+	}
 });
 ```
 
@@ -138,11 +142,10 @@ var md = require('markdown-it')({
 
 ```js
 var md = require('markdown-it')()
-            .use(plugin1)
-            .use(plugin2, opts, ...)
-            .use(plugin3);
+	.use(plugin1)
+	.use(plugin2, opts, ...)
+	.use(plugin3);
 ```
-
 
 ### Syntax highlighting
 
@@ -152,14 +155,15 @@ Apply syntax highlighting to fenced code blocks with the `highlight` option:
 var hljs = require('highlight.js'); // https://highlightjs.org
 // Actual default values
 var md = require('markdown-it')({
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(str, { language: lang }).value;
-      } catch (__) {}
-    }
-    return ''; // use external default escaping
-  }
+	highlight: function(str, lang) {
+		if (lang && hljs.getLanguage(lang)) {
+			try {
+				return hljs.highlight(str, { language: lang }).value;
+			} catch (__) {
+			}
+		}
+		return ''; // use external default escaping
+	}
 });
 ```
 
@@ -169,16 +173,17 @@ Or with full wrapper override (if you need assign class to `<pre>`):
 var hljs = require('highlight.js'); // https://highlightjs.org
 // Actual default values
 var md = require('markdown-it')({
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return '<pre class="hljs"><code>' +
-               hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
-               '</code></pre>';
-      } catch (__) {}
-    }
-    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-  }
+	highlight: function(str, lang) {
+		if (lang && hljs.getLanguage(lang)) {
+			try {
+				return '<pre class="hljs"><code>' +
+					hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+					'</code></pre>';
+			} catch (__) {
+			}
+		}
+		return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+	}
 });
 ```
 
@@ -191,14 +196,12 @@ configure linkify-it, access the linkify instance through `md.linkify`:
 md.linkify.set({ fuzzyEmail: false });  // disables converting email to link
 ```
 
-
 ## API
 
 __[API documentation](https://markdown-it.github.io/markdown-it/)__
 
 If you are going to write plugins, please take a look at
 [Development info](https://github.com/markdown-it/markdown-it/tree/master/docs).
-
 
 ## Syntax extensions
 
@@ -220,7 +223,6 @@ Via plugins:
 - [mark](https://github.com/markdown-it/markdown-it-mark)
 - ... and [others](https://www.npmjs.org/browse/keyword/markdown-it-plugin)
 
-
 ### Manage rules
 
 By default all rules are enabled, but can be restricted by options. On plugin
@@ -229,14 +231,14 @@ load all its rules are enabled automatically.
 ```js
 // Activate/deactivate rules, with currying
 var md = require('markdown-it')()
-            .disable([ 'link', 'image' ])
-            .enable([ 'link' ])
-            .enable('image');
+	.disable(['link', 'image'])
+	.enable(['link'])
+	.enable('image');
 // Enable everything
 md = require('markdown-it')({
-  html: true,
-  linkify: true,
-  typographer: true,
+	html: true,
+	linkify: true,
+	typographer: true,
 });
 ```
 
@@ -245,7 +247,6 @@ You can find all rules in sources:
 - [`parser_core.js`](lib/parser_core.js)
 - [`parser_block.js`](lib/parser_block.js)
 - [`parser_inline.js`](lib/parser_inline.js)
-
 
 ## Benchmark
 
@@ -263,20 +264,22 @@ Sample: README.md (7774 bytes)
  > marked x 1,587 ops/sec ±4.31% (93 runs sampled)
 ```
 
-__Note.__ CommonMark version runs with [simplified link normalizers](https://github.com/markdown-it/markdown-it/blob/master/benchmark/implementations/current-commonmark/index.js)
+__Note.__ CommonMark version runs
+with [simplified link normalizers](https://github.com/markdown-it/markdown-it/blob/master/benchmark/implementations/current-commonmark/index.js)
 for more "honest" compare. Difference is ≈1.5×.
 
 As you can see, `markdown-it` doesn't pay with speed for its flexibility.
 Slowdown of "full" version caused by additional features not available in
 other implementations.
 
-
 ## markdown-it for enterprise
 
 Available as part of the Tidelift Subscription.
 
-The maintainers of `markdown-it` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-markdown-it?utm_source=npm-markdown-it&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
-
+The maintainers of `markdown-it` and thousands of other packages are working with Tidelift to deliver commercial support
+and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve
+code health, while paying the maintainers of the exact dependencies you
+use. [Learn more.](https://tidelift.com/subscription/pkg/npm-markdown-it?utm_source=npm-markdown-it&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
 
 ## Authors
 
