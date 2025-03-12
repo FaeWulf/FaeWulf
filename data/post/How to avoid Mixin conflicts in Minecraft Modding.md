@@ -57,11 +57,11 @@ There is also a useful [wiki](https://github.com/LlamaLad7/MixinExtras/wiki) for
   
 Alright lets begin! As far as I know, there are 3 type of injectors you should avoid using:
 
-####  `@Redirect`
+#### 1. `@Redirect`
 
 Instead of `@Redirect`, use `@WrapOperation` from MixinExtras. The difference is that `@WrapOperation` allows multiple mods to chain their modifications instead of overwriting each other.
 
-####  `@ModifyConstant`
+#### 2. `@ModifyConstant`
 
 Instead of `@ModifyConstant`, use `@ModifyExpressionValue`. The syntax is slightly different. Here's how you can replace the original example:
 
@@ -78,11 +78,11 @@ public class AnvilBlockMixin {
 }
 ```
 
-####  `@Overwrite`
+#### 3. `@Overwrite`
 
 `@Overwrite` should be avoided as much as possible. There is no solid workaround, but you should always try to use alternative injectors instead of completely replacing a method.
 
-### ⚡ Other Causes of Conflicts I Want To Mention
+#### 4. Other Causes of Conflicts I Want To Mention
 
 Besides these injectors mentioned above, another common cause of crashes is using the same interface in multiple Mixin classes.
 
