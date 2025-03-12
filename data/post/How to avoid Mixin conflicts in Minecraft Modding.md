@@ -2,8 +2,8 @@ Create: "2025-03-11T10:40:59.954Z"
 Edit: "2025-03-11T10:40:59.954Z"
 Tags: "minecraft mixin tutorial"
 
-
-#### **TL;DR**  
+> [!NOTE]
+> **TL;DR**  
 >Some Mixin injectors (`@Redirect`, `@ModifyConstant`, `@Overwrite`) can cause **hard conflicts** when multiple mods modify the same method/class, leading to crashes. 🚨
 >
 > **Safer alternatives using MixinExtras**:
